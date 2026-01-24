@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <h1>Plant mood matcher</h1>
+        <p>please enter yout current mood and age and then click submit</p>       
+        <div id="mood" class="center-container">
+            Please enter your current mood:    
+            <select>
+                <option value="">Please select an option</option>
+                <option value="happy">happy</option>
+                <option value="sad">sad</option>
+                <option value="angry">angry</option>
+                <option value="neutral">neutral</option>
+            </select>
+        </div>
+        <div id="input" class="center-container">
+            Please enter your current age:
+            <input type="number">
+        </div>
+        <div class="center-container">
+            <button onclick="submit()">
+                Submit!
+            </button>
+        </div>
+        <script>
+            function submit() {
+                    var age =  document.querySelector("#input input[type='number']").value;
+                    var mood = document.querySelector("#mood select").value;
+                    if (mood !== "" && age > 0) {
+                        console.log("Form submitted");
+                        if (mood === "happy" && age <= 15) {
+                            window.location.href="dandelion.html";
+                        }
+                        else if (age <= 15 && mood==="sad") {
+                            window.location.href="bluebell.html";
+                        }
+                        else if (age <= 15 && mood==="angry") {
+                            window.location.href="cactus.html";
+                        }
+                        else if (age <= 15 && mood==="neutral") {
+                            window.location.href="grass.html";
+                        }
+                        else if (age >= 16 && age <= 45 && mood==="happy") {
+                            window.location.href="sunflower.html"
+                        }
+                        else if (age >= 16 && age <= 45 && mood==="sad") {
+                            window.location.href="weeping-willow.html"
+                        }
+                        else if (age >= 16 && age <= 45 && mood==="angry") {
+                            window.location.href="red-hot-poker.html"
+                        }
+                        else if (age >= 16 && age <= 45 && mood==="neutral") {
+                            window.location.href="fern.html"
+                        }
+                        else if (age >= 46 && age <= 94 && mood==="happy") {
+                            window.location.href="marigold.html"
+                        }
+                        else if (age >= 46 && age <= 94 && mood==="sad") {
+                            window.location.href="blue-iris.html"
+                        }
+                        else if (age >= 46 && age <= 94 && mood==="angry") {
+                            window.location.href="thistle.html"
+                        }
+                        else if (age >= 46 && age <= 65 && mood==="neutral") {
+                            window.location.href="succulent.html"
+                        }
+                        else if (age >= 66 && age <= 94 && mood==="neutral") {
+                            window.location.href="cedar-tree.html"
+                        }
+                        else if (age >= 95 && mood==="happy" || mood==="sad" || mood==="angry" || mood==="neutral") {
+                            window.location.href="over95.html";
+                        }
+                        else{
+                            alert("Please input a valid age (age cannot be zero) and please enter a valid mood");
+                        }
+                    }
+            }
+        </script>
+    </body>
+    </html>
